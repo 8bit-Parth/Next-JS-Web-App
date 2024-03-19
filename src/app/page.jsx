@@ -14,7 +14,7 @@ export default function Home() {
         With cutting-edge features and intuitive design,inviteMate streamlines the invitation process, enhances collaboration, and fosters meaningful connections. 
         </p>
         <Button url="/portfolio" text="See Our Works"/>
-      </div>
+      </div> 
       <div className={styles.item}>
         <Image src={Hero} alt="" className={styles.img} />
       </div>
