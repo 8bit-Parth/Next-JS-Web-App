@@ -1,0 +1,11 @@
+version: '2.4'
+
+services:
+  web:
+    image: parth7091/next-web-app:latest
+    environment:
+      - MONGO_URI=mongodb+srv://Parth:KIUhC72QgLcQVpE0@cluster0.myfff6y.mongodb.net/web-app?retryWrites=true&w=majority&appName=Cluster0
+    volumes:
+     - ./:/app
+    ports:
+      - 3000:3000
