@@ -9,3 +9,5 @@ const connect = async () => {
 };
 
 export default connect;
+
+mongoose.set('strictQuery', false);
