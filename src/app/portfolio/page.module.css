@@ -24,13 +24,16 @@
 }
 
 .item:nth-child(1) {
-  background: url("/illustration.png");
+  background: url("/occasions.png");
 }
 .item:nth-child(2) {
-  background: url("/websites.jpg");
+  background: url("/corporate.jpg");
 }
 .item:nth-child(3) {
-  background: url("/apps.jpg");
+  background: url("/festivals.png");
+}
+.item:nth-child(4) {
+  background: url("/virtual.jpg");
 }
 
 .title {
@@ -39,6 +42,7 @@
   bottom: 10px;
   font-size: 40px;
   font-weight: bold;
+  color: black;
 }
 
 .item:hover .title {

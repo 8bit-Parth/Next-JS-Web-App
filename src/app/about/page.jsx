@@ -24,34 +24,47 @@ const About = () => {
         <div className={styles.item}>
           <h1 className={styles.title}>Who Are We?</h1>
           <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            quae dolor, optio voluptatibus magnam iure esse tempora beatae. A
-            suscipit eos. Animi quibusdam cum omnis officiis voluptatum quo ea
-            eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Ducimus quae dolor, optio voluptatibus magnam iure esse tempora
-            beatae, a suscipit eos. Animi quibusdam cum omnis officiis
+            We are a team of creative minds, tech enthusiasts, 
+            and customer-centric professionals 
+            dedicated to redefining the art of invitation design. 
+            With years of experience in both design and technology, 
+            we bring a unique blend of expertise to the table, 
+            ensuring that every aspect of our platform is thoughtfully 
+            crafted and meticulously executed.
             <br />
             <br />
-            voluptatum quo ea eveniet? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Ducimus quae dolor, optio voluptatibus magnam iure
-            esse tempora beatae, a suscipit eos. Animi quibusdam cum omnis
-            officiis voluptatum quo ea eveniet?
+            <h1 className={styles.title}>Our Vision</h1>
+            <br />
+              Our vision is to be the premier destination for digital 
+              invitation creation, setting the standard for innovation, 
+              creativity, and convenience in the industry. 
+            <br />
+            <br />
+            <h1 className={styles.title}>Location</h1>
+            <br />
+              Digital Valley, 103, Amora Arcade, 
+              near Mauni International School, 
+              Uttran, Surat, Gujarat 394105
           </p>
         </div>
         <div className={styles.item}>
           <h1 className={styles.title}>What We Do?</h1>
           <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            quae dolor, optio voluptatibus magnam iure esse tempora beatae, a
-            suscipit eos. Animi quibusdam cum omnis officiis voluptatum quo ea
-            eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit. -
-            Creative Illustrations
+            inviteMate offers a user-friendly and intuitive platform where 
+            users can easily create stunning digital invitation cards for any occasion. 
+            Whether its a wedding, birthday, baby shower, or corporate event, 
+            our comprehensive suite of tools and templates caters to every need and style.
             <br />
-            <br /> - Dynamic Websites
             <br />
-            <br /> - Fast and Handy
             <br />
-            <br /> - Mobile Apps
+            <h1 className={styles.title}>Why Choose Us ?</h1>
+            <br /> - Easy to use 
+            <br />
+            <br /> - Personalized Experience
+            <br />
+            <br /> - Seamless Integration
+            <br />
+            <br /> - Exceptional Support
           </p>
           <Button url="/contact" text="Contact" />
         </div>
