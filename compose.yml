@@ -6,7 +6,7 @@ services:
     environment:
       - MONGO_URI=${{ secrets.MONGO_URI }}
     volumes:
-     - ./app-data:/app
+     - ./next-web-app:/app
     ports:
       - 3000:3000
 volumes:

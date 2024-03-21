@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`http://116.202.9.154:3000/api/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   });
 
@@ -14,7 +14,6 @@ async function getData(id) {
 
   return res.json();
 }
-
 
 export async function generateMetadata({ params }) {
 
