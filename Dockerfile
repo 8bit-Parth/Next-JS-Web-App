@@ -16,4 +16,4 @@ ENV HOSTNAME "0.0.0.0"
 
 CMD [ "npm", "run", "start" ]
 
-ENV MONGO_URI ${{ secrets.MONGO_URI }}
+# ENV MONGO_URI=$MONGO_URI

@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  MONGODB_URI: ${{ secrets.MONGODB_URI }}
+  MONGO_URI: ${{ secrets.MONGO_URI }}
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
           docker pull parth7091/next-web-app:latest
       - name: Run Docker Conainer
         run: |
-          docker run -d -p 3000:3000 --name next-web-app-container -e MONGODB_URI:'${{ secrets.MONGO_URI }}' parth7091/next-web-app
+          docker run -d -p 3000:3000 --name next-web-app-container -e MONGO_URI:'${{ secrets.MONGO_URI }}' parth7091/next-web-app
     #   - name: Run Docker Containers
     #     run: |
     #       cd /data/next-js-admin-dashboard
