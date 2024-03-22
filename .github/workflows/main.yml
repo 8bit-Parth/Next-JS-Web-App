@@ -1,57 +1,5 @@
 # #for server
 
-name: Deploy Next-JS-Web-App
-
-on:
-  push:
-    branches:
-      - main
-
-env:
-  MONGO_URI: ${{ secrets.MONGO_URI }}
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Source
-        uses: actions/checkout@v4
-      - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
-      - name: Build Docker Images
-        run: |
-          docker build -t parth7091/next-web-app .
-      - name: Publish Images to Docker Hub
-        run: |
-          docker push parth7091/next-web-app:latest
-  deploy:
-    needs: build
-    runs-on: self-hosted
-    steps:
-      - name: Pull images from Docker Hub
-        run: |
-          docker pull parth7091/next-web-app:latest
-      - name: Copy files from _temp folder
-        run: |
-          cp -r /actions-runner-next/_work/_temp/* /data/next-web-app
-          ls -l /data/next-web-app
-          rm -rf /actions-runner-next/_work/_temp/* 
-      - name: Run Docker Containers
-        run: |
-          cd /data/next-web-app
-          docker-compose up -d
-      # - name: Remove old containers
-      #   run: |
-      #     docker-compose down --remove-orphans
-      # - name: Run Docker Containers
-      #   run: docker-compose up -d
-
-
-
-
-
-
-# # for aws-ec2
 # name: Deploy Next-JS-Web-App
 
 # on:
@@ -78,23 +26,75 @@ jobs:
 #           docker push parth7091/next-web-app:latest
 #   deploy:
 #     needs: build
-#     runs-on: aws-ec2
+#     runs-on: self-hosted
 #     steps:
 #       - name: Pull images from Docker Hub
 #         run: |
 #           docker pull parth7091/next-web-app:latest
-#       - name: Run Docker Conainer
+#       - name: Copy files from _temp folder
 #         run: |
-#           docker run -d -p 3000:3000 --name next-web-app-container -e MONGO_URI:'${{ secrets.MONGO_URI }}' parth7091/next-web-app
-#     #   - name: Run Docker Containers
-#     #     run: |
-#     #       cd /data/next-js-admin-dashboard
-#     #       docker-compose up -d
-#       # # - name: Remove old containers
-#       # #   run: |
-#       # #     docker-compose down --remove-orphans
+#           cp -r /actions-runner-next/_work/_temp/* /data/next-web-app
+#           ls -l /data/next-web-app
+#           rm -rf /actions-runner-next/_work/_temp/* 
+#       - name: Run Docker Containers
+#         run: |
+#           cd /data/next-web-app
+#           docker-compose up -d
+#       # - name: Remove old containers
+#       #   run: |
+#       #     docker-compose down --remove-orphans
 #       # - name: Run Docker Containers
 #       #   run: docker-compose up -d
+
+
+
+
+
+
+# # for aws-ec2
+name: Deploy Next-JS-Web-App
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  MONGO_URI: ${{ secrets.MONGO_URI }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
+      - name: Build Docker Images
+        run: |
+          docker build -t parth7091/next-web-app .
+      - name: Publish Images to Docker Hub
+        run: |
+          docker push parth7091/next-web-app:latest
+  deploy:
+    needs: build
+    runs-on: aws-ec2
+    steps:
+      - name: Pull images from Docker Hub
+        run: |
+          docker pull parth7091/next-web-app:latest
+      - name: Run Docker Conainer
+        run: |
+          docker run -d -p 3000:3000 --name next-web-app-container -e MONGO_URI:'${{ secrets.MONGO_URI }}' parth7091/next-web-app
+    #   - name: Run Docker Containers
+    #     run: |
+    #       cd /data/next-js-admin-dashboard
+    #       docker-compose up -d
+      # # - name: Remove old containers
+      # #   run: |
+      # #     docker-compose down --remove-orphans
+      # - name: Run Docker Containers
+      #   run: docker-compose up -d
 
 
 
