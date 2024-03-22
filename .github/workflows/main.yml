@@ -36,7 +36,7 @@ jobs:
           rm -rf /actions-runner-next/_work/_temp/* 
       - name: Run Docker Containers
         run: |
-          cd /data/next-js-web-app
+          cd /data/next-web-app
           docker-compose up -d
 
 
