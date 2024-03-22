@@ -36,7 +36,7 @@ jobs:
           rm -rf /home/ubuntu/actions-runner/_work/_temp/* 
       - name: Run Docker Containers
         run: |
-          cd /data/next-js-admin-dashboard
+          cd /data/next-js-web-app
           docker-compose up -d
 
 
