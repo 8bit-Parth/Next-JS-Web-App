@@ -24,7 +24,7 @@ jobs:
           docker push parth7091/next-web-app:latest
   deploy:
     needs: build
-    runs-on: self-hosted
+    runs-on: ec2-aws
     steps:
       - name: Pull images from Docker Hub
         run: |
