@@ -40,11 +40,11 @@ jobs:
         run: |
           cd /data/next-web-app
           docker-compose up -d
-      - name: Remove old containers
-        run: |
-          docker-compose down --remove-orphans
-      - name: Run Docker Containers
-        run: docker-compose up -d
+      # - name: Remove old containers
+      #   run: |
+      #     docker-compose down --remove-orphans
+      # - name: Run Docker Containers
+      #   run: docker-compose up -d
 
 
 
