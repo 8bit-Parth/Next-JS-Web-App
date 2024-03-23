@@ -45,8 +45,6 @@ jobs:
 
 
 
-
-
 #for aws-ec2
 
 # name: Deploy Next-JS-Web-App
