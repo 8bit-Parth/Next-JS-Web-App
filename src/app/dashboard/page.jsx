@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import useSWR from "swr";
@@ -105,7 +106,7 @@ const Dashboard = () => {
                     className={styles.delete}
                     onClick={() => handleDelete(post._id)}
                   >
-                    X
+                    ⛔
                   </span>
                 </div>
               ))}

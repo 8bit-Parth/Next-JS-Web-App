@@ -5,6 +5,8 @@ services:
     image: parth7091/next-web-app:latest
     environment:
       - MONGO_URI=${{ secrets.MONGO_URI }}
+      - GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+      - GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRE }}
     volumes:
      - ./next-web-app:/app
     ports:
