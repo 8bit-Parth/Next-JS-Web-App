@@ -22,7 +22,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: self-hosted
+    runs-on: aws-ec2
     steps:
       - name: Pull image from docker hub
         run: docker pull parth7091/next-web-app:latest
