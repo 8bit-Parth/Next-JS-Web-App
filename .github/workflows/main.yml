@@ -7,9 +7,6 @@ on:
 
 env:
   MONGO_URI: ${{ secrets.MONGO_URI }}
-  GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-  GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-
 
 jobs:
   build:
@@ -41,59 +38,6 @@ jobs:
         run: |
           cd /data/next-web-app
           docker-compose up -d
-
-
-
-
-
-
-
-#for aws-ec2
-
-# name: Deploy Next-JS-Web-App
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# env:
-#   MONGO_URI: ${{ secrets.MONGO_URI }}
-
-# jobs:
-#   build:
-#     runs-on: aws-ec2
-#     steps:
-#       - name: Checkout Source
-#         uses: actions/checkout@v4
-#       - name: Login to Docker Hub
-#         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
-#       - name: Build Docker Images
-#         run: |
-#           docker build -t parth7091/next-web-app .
-#       - name: Publish Images to Docker Hub
-#         run: |
-#           docker push parth7091/next-web-app:latest
-#   deploy:
-#     needs: build
-#     runs-on: self-hosted
-#     steps:
-#       - name: Pull images from Docker Hub
-#         run: |
-#           docker pull parth7091/next-web-app:latest
-#       - name: Run Docker Conainer
-#         run: |
-#           docker run -d -p 3000:3000 --name next-web-app-container -e MONGO_URI:'${{ secrets.MONGO_URI }}' parth7091/next-web-app
-#     #   - name: Run Docker Containers
-#     #     run: |
-#     #       cd /data/next-js-admin-dashboard
-#     #       docker-compose up -d
-#       # # - name: Remove old containers
-#       # #   run: |
-#       # #     docker-compose down --remove-orphans
-#       # - name: Run Docker Containers
-#       #   run: docker-compose up -d
-
 
 
 
